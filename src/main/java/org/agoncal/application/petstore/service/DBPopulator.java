@@ -1,20 +1,19 @@
 package org.agoncal.application.petstore.service;
 
-import org.agoncal.application.petstore.domain.*;
-import org.agoncal.application.petstore.util.Loggable;
-
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-import javax.annotation.sql.DataSourceDefinition;
-import javax.ejb.Singleton;
-import javax.ejb.Startup;
 import javax.inject.Inject;
+
+import org.agoncal.application.petstore.domain.Address;
+import org.agoncal.application.petstore.domain.Category;
+import org.agoncal.application.petstore.domain.Customer;
+import org.agoncal.application.petstore.domain.Item;
+import org.agoncal.application.petstore.domain.Product;
 
 /**
  * @author Antonio Goncalves
  *         http://www.antoniogoncalves.org
  *         --
- */
 
 @Singleton
 @Startup
@@ -27,6 +26,7 @@ import javax.inject.Inject;
         databaseName = "applicationPetstoreDB",
         properties = {"connectionAttributes=;create=true"}
 )
+ */
 public class DBPopulator {
 
     // ======================================
