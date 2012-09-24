@@ -3,6 +3,7 @@ package org.agoncal.application.petstore.service;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
 import org.agoncal.application.petstore.domain.Address;
 import org.agoncal.application.petstore.domain.Category;
@@ -15,7 +16,6 @@ import org.agoncal.application.petstore.domain.Product;
  *         http://www.antoniogoncalves.org
  *         --
 
-@Singleton
 @Startup
 @Loggable
 @DataSourceDefinition(
@@ -27,6 +27,7 @@ import org.agoncal.application.petstore.domain.Product;
         properties = {"connectionAttributes=;create=true"}
 )
  */
+@Singleton
 public class DBPopulator {
 
     // ======================================

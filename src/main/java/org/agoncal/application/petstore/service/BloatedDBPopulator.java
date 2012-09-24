@@ -22,7 +22,12 @@ import org.agoncal.application.petstore.util.Loggable;
 @Singleton
 @Startup
 @Loggable
-@DataSourceDefinition(className = "org.apache.derby.jdbc.EmbeddedDataSource", name = "java:global/jdbc/applicationPetstoreDS", user = "app", password = "app", databaseName = "applicationPetstoreDB", properties = { "connectionAttributes=;create=true" })
+@DataSourceDefinition(  className = "org.apache.derby.jdbc.EmbeddedDataSource", 
+                        name = "java:global/jdbc/applicationPetstoreDS", 
+                        user = "app", 
+                        password = "app", 
+                        databaseName = "applicationPetstoreDB", 
+                        properties = { "connectionAttributes=;create=true" })
 public class BloatedDBPopulator implements BloatedDBPopulatorMXBean {
 
     @Inject
@@ -52,8 +57,8 @@ public class BloatedDBPopulator implements BloatedDBPopulatorMXBean {
     }
 
     private void clearDB() {
-        for (Category cat : catalogService.findAllCategories()) {
-            catalogService.removeCategory(cat);
+        for (Category catagory : catalogService.findAllCategories()) {
+            catalogService.removeCategory(catagory);
         }
     }
 
