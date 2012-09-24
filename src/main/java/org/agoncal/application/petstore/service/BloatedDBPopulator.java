@@ -40,7 +40,7 @@ public class BloatedDBPopulator implements BloatedDBPopulatorMXBean {
                                                         new Category("Cats", " Small carnivorous mammal domesticated since early times as a catcher of rats and mice and as a pet and existing in several distinctive breeds and varieties"), new Category("Birds", "Any of the class Aves of warm-blooded, egg-laying, feathered vertebrates with forelimbs modified to form wings"));
 
     @PostConstruct
-    private void populateDB() {
+    private void registerMBean() {
         MBeanServer mbs = ManagementFactory.getPlatformMBeanServer();
         ObjectName name;
         try {
@@ -60,10 +60,6 @@ public class BloatedDBPopulator implements BloatedDBPopulatorMXBean {
     private String randomString() {
         return UUID.randomUUID().toString().substring(0, 29);
     }
-
-    // ======================================
-    // = Private Methods =
-    // ======================================
 
     private Category selectRandomCategory() {
         return catagories.get((int) (Math.random() * catagories.size()));
